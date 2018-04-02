@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b0aa3fe40c6339b44aaabd4ebdfb03e5
+timeCreated: 1522581524
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Glasgow-Light
+  fontNames:
+  - Glasgow-Light
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
