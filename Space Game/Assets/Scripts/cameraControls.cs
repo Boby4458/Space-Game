@@ -13,6 +13,7 @@ public class cameraControls : MonoBehaviour {
 
     private void Update()
     {
+        if (myShip == null) return;
         transform.position = Vector3.Lerp(transform.position, myShip.position, cameraFollowSmooth * Time.deltaTime); 
         if (Input.GetMouseButtonDown(1))
         {

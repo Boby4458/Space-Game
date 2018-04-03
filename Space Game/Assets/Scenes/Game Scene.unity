@@ -983,6 +983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverName: publicserver1
   savedUnformattedSectors: []
+  sectorManagment: {fileID: 186318904}
 --- !u!4 &186318903
 Transform:
   m_ObjectHideFlags: 0
@@ -1007,16 +1008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8215ee9b5b792448936c665a23c9bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sector:
-    name: 
-    sectorPosition: {x: 0, y: 0, z: 0}
-    sectorRadius: 0
-    components:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+  allSectors: []
   dataServerManager: {fileID: 186318902}
 --- !u!1 &197730288
 GameObject:
@@ -9354,6 +9346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154381dd11ba8484682a1e0277cba2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roommanager: {fileID: 1902250473}
+  servername: publicserver1
 --- !u!4 &1871160472
 Transform:
   m_ObjectHideFlags: 0
@@ -9647,6 +9641,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectorSize: 400
+  networkManager: {fileID: 1871160471}
+  myShip: {fileID: 0}
+  sectorNameDisplay: {fileID: 1500654364}
+  sectorPositionDisplay: {fileID: 790147823}
+  sM: {fileID: 186318904}
+  curSector:
+    name: 
+    x: 0
+    y: 0
+    z: 0
+    sectorRadius: 0
+    components: []
+  spaceshipPositionRelativeToCenterOfUniverse: {x: 0, y: 0, z: 0}
 --- !u!4 &1902250474
 Transform:
   m_ObjectHideFlags: 0

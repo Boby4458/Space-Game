@@ -5,43 +5,30 @@ using Newtonsoft.Json;
 
 public class sectorManager : MonoBehaviour {
 
-    public Sector sector;
+    public Sector[] allSectors;
     public serverScript dataServerManager;
     bool alreadyEdited;
 
     private void Start()
     {
-         //If null then index does not exist.
-         
+        //If null then index does not exist.
     }
     private void Update()
     {
-        if (Time.time > 30 && !alreadyEdited) 
-        {
-            alreadyEdited = true;
-            sector = formatSector("Tom2");
-            print("Component 0 position: " + sector.x);
-            dataServerManager.editSector("Tom2", new Sector("EditedTom", Vector3.down, 21.5f));
-            
-        }
+       
        
     }
     
-    public Sector formatSector (string sectorName)
+    public void formatAllSectors ()
     {
-        Sector formattedSector = new Sector(string.Empty, Vector3.zero, 0);
+        int loopCounter = -1;
+        allSectors = new Sector[dataServerManager.savedUnformattedSectors.Length];
         foreach (string unformattedSector in dataServerManager.savedUnformattedSectors)
         {
-            Sector formatThisSector = JsonConvert.DeserializeObject<Sector>(unformattedSector);
-            string curName = formatThisSector.name;
-            if (curName == sectorName)
-            {
-                formattedSector = formatThisSector;
-                break;
-            }
+            loopCounter++;
+            allSectors[loopCounter] = JsonConvert.DeserializeObject<Sector>(unformattedSector);
+
         }
-     
-        return formattedSector;
     }
 }
 [System.Serializable]

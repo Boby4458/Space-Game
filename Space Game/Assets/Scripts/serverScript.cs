@@ -9,39 +9,21 @@ public class serverScript : MonoBehaviour
 
     public string serverName;
     public string[] savedUnformattedSectors;
-    int i;
+    public sectorManager sectorManagment;
 
     private void Start()
     {
-        downloadSectors();
+        InvokeRepeating("downloadSectors", 0, 5);
        
-      
-
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            i++;
-            testCreateSector();
-        }
+        
     }
-    void testCreateSector()
+   
+    void createNewSector(Sector newSector)
     {
-        Sector sector = new Sector("Tom" + i.ToString(), new Vector3(0, i, 0), i * 10);
-
-
-        sector.components = new buildingComponent[2];
-        sector.components[0] = new buildingComponent();
-        sector.components[0].componentType = "Bomb Launcher" + i.ToString();
-
-
-        string data = JsonConvert.SerializeObject(sector);
-        createNewSector(data);
-    }
-    void createNewSector(string data)
-    {
-       
+        string data = JsonConvert.SerializeObject(newSector);
         StartCoroutine(createNewSectorCoroutine(data + "+" ));
     }
     void downloadSectors()
@@ -151,7 +133,7 @@ public class serverScript : MonoBehaviour
     {
         string[] unformattedSectors = rawData.Split('+');
         savedUnformattedSectors = unformattedSectors;
-       
+        sectorManagment.formatAllSectors();
     }
 
 }

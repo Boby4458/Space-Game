@@ -1,35 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class roomManager : MonoBehaviour {
 
     public float sectorSize;
+    public mainNetworkManager networkManager;
+    public Transform myShip;
+    public Text sectorNameDisplay;
+    public Text sectorPositionDisplay;
+    public sectorManager sM;
+    public Sector curSector;
+    public Vector3 spaceshipPositionRelativeToCenterOfUniverse;
 
     void Update()
     {
-        if (!PhotonNetwork.inRoom)
-        {
-            return;
-        }
-        bool playerInSector = false;
+        calculateCurSector();
 
-       foreach (Collider _GameObject in Physics.OverlapSphere(Vector3.zero, sectorSize)){
-            if (_GameObject.GetComponent<spaceShipControls> () != null)
+        if (myShip == null) return;
+
+        if (Vector3.Distance (myShip.position, Vector3.zero) > sectorSize)
+        {
+            PhotonNetwork.Disconnect();
+        }
+
+        sectorNameDisplay.text = curSector.name;
+        sectorPositionDisplay.text = curSector.x.ToString () + ", " + curSector.y.ToString () + ", " + curSector.z.ToString();
+
+    }
+    void calculateCurSector()
+    {
+        foreach (Sector sector in sM.allSectors)
+        {
+            if (Vector3.Distance (spaceshipPositionRelativeToCenterOfUniverse, new Vector3 (sector.x, sector.y, sector.z)) <= sector.sectorRadius)
             {
-                if (_GameObject.GetComponent<spaceShipControls>().enabled) //Ensuring that this is my ship.
-                {
-                    playerInSector = true;
-
-                }
+                curSector = sector;
+                networkManager.joinSector();
+                print("Name " + curSector.name);
+                return;
             }
-
-        }
-
-
-        if (!playerInSector)
-        {
-             PhotonNetwork.Disconnect();
         }
     }
     private void OnDrawGizmos()
