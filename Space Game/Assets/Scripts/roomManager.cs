@@ -26,7 +26,7 @@ public class roomManager : MonoBehaviour {
         }
 
         sectorNameDisplay.text = curSector.name;
-        sectorPositionDisplay.text = curSector.x.ToString () + ", " + curSector.y.ToString () + ", " + curSector.z.ToString();
+        sectorPositionDisplay.text = "Position Relative To Center: " + curSector.x.ToString () + ", " + curSector.y.ToString () + ", " + curSector.z.ToString();
 
     }
     void calculateCurSector()

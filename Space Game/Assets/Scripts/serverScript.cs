@@ -41,7 +41,7 @@ public class serverScript : MonoBehaviour
     }
     IEnumerator editSectorCoroutine (string sectorName, string replacementData)
     {
-        IEnumerator downloadData = DCF.GetUserData(serverName, serverName); // << Send request to get the player's data string. Provides the username and password
+        IEnumerator downloadData = DCF.GetUserData(serverName, serverName); 
         while (downloadData.MoveNext())
         {
             yield return downloadData.Current;
@@ -78,8 +78,7 @@ public class serverScript : MonoBehaviour
         }
         print("New Data " + newData);
 
-        IEnumerator setData = DCF.SetUserData(serverName, serverName, newData); // << Send request to set the player's data string. Provides the username, password and new data string
-        while (setData.MoveNext())
+        IEnumerator setData = DCF.SetUserData(serverName, serverName, newData); 
         {
             yield return setData.Current;
         }
@@ -88,14 +87,13 @@ public class serverScript : MonoBehaviour
     }
     IEnumerator resetServerCoroutine()
     {
-        IEnumerator downloadData = DCF.GetUserData(serverName, serverName); // << Send request to get the player's data string. Provides the username and password
+        IEnumerator downloadData = DCF.GetUserData(serverName, serverName); 
         while (downloadData.MoveNext())
         {
             yield return downloadData.Current;
         }
         print("Existing data " + downloadData.Current.ToString());
-        IEnumerator e = DCF.SetUserData(serverName, serverName, string.Empty); // << Send request to set the player's data string. Provides the username, password and new data string
-        while (e.MoveNext())
+        IEnumerator e = DCF.SetUserData(serverName, serverName, string.Empty); 
         {
             yield return e.Current;
         }
@@ -104,29 +102,29 @@ public class serverScript : MonoBehaviour
     }
     IEnumerator createNewSectorCoroutine(string data)
     {
-        IEnumerator downloadData = DCF.GetUserData(serverName, serverName); // << Send request to get the player's data string. Provides the username and password
+        IEnumerator downloadData = DCF.GetUserData(serverName, serverName); 
         while (downloadData.MoveNext())
         {
             yield return downloadData.Current;
         }
         print("Existing data " + downloadData.Current.ToString ());
-        IEnumerator e = DCF.SetUserData(serverName, serverName, downloadData.Current + data); // << Send request to set the player's data string. Provides the username, password and new data string
+        IEnumerator e = DCF.SetUserData(serverName, serverName, downloadData.Current + data); 
         while (e.MoveNext())
         {
             yield return e.Current;
         }
-        string response = e.Current as string; // << The returned string from the request
+        string response = e.Current as string; 
         print("Upload Status: " + response);
         StartCoroutine(getAllSectors());
     }
     IEnumerator getAllSectors()
     {
-        IEnumerator e = DCF.GetUserData(serverName, serverName); // << Send request to get the player's data string. Provides the username and password
+        IEnumerator e = DCF.GetUserData(serverName, serverName);
         while (e.MoveNext())
         {
             yield return e.Current;
         }
-        string response = e.Current as string; // << The returned string from the request
+        string response = e.Current as string; 
         formatDataIntoUnformattedSectors(response);
     }
     void formatDataIntoUnformattedSectors(string rawData)

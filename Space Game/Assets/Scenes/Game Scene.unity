@@ -4025,10 +4025,10 @@ RectTransform:
   m_Father: {fileID: 1535990173}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 240.3598, y: 41.618896}
-  m_SizeDelta: {x: 425.82, y: 51.76999}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 129.52, y: -90}
+  m_SizeDelta: {x: 204.14, y: 51.77002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &790147823
 MonoBehaviour:
@@ -4062,7 +4062,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Center Relative Position: \n30341, 3405, -20123"
+  m_Text: 'Position Relative To Center
+
+    0'
 --- !u!222 &790147824
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7583,9 +7585,9 @@ RectTransform:
   m_Father: {fileID: 1535990173}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 165, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 165, y: -31.618774}
   m_SizeDelta: {x: 275.09998, y: 68.400024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500654364
@@ -7614,7 +7616,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
-    m_Alignment: 3
+    m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
