@@ -425,4 +425,4 @@ MonoBehaviour:
   curVelocity: 0
   accelerationSpeed: 0.01
   turningAccelerationSpeed: 0.1
-  maxForwardVelocity: 25
+  maxForwardVelocity: 50

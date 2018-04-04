@@ -14,7 +14,6 @@ public class serverScript : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("downloadSectors", 0, 5);
-       
     }
     private void Update()
     {

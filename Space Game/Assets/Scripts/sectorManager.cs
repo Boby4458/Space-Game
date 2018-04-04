@@ -5,9 +5,12 @@ using Newtonsoft.Json;
 
 public class sectorManager : MonoBehaviour {
 
+    public Sector[] allSectorsOne;
     public Sector[] allSectors;
+
     public serverScript dataServerManager;
     bool alreadyEdited;
+    Vector3 forwardTransform;
 
     private void Start()
     {
@@ -22,13 +25,14 @@ public class sectorManager : MonoBehaviour {
     public void formatAllSectors ()
     {
         int loopCounter = -1;
-        allSectors = new Sector[dataServerManager.savedUnformattedSectors.Length];
+        allSectorsOne = new Sector[dataServerManager.savedUnformattedSectors.Length];
         foreach (string unformattedSector in dataServerManager.savedUnformattedSectors)
         {
             loopCounter++;
-            allSectors[loopCounter] = JsonConvert.DeserializeObject<Sector>(unformattedSector);
+            allSectorsOne[loopCounter] = JsonConvert.DeserializeObject<Sector>(unformattedSector);
 
         }
+        allSectors = allSectorsOne;
     }
 }
 [System.Serializable]

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.61308223, g: 0.17933872, b: 0.7069821, a: 1}
+  m_IndirectSpecularColor: {r: 0.030019643, g: 0.15004712, b: 0.41412577, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -6629,7 +6629,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 1437702617}
-  m_RootOrder: 111
+  m_RootOrder: 110
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1359830965
 GameObject:
@@ -7476,7 +7476,6 @@ Transform:
   - {fileID: 480766157}
   - {fileID: 1536045601}
   - {fileID: 1028330125}
-  - {fileID: 1768034260}
   - {fileID: 1351806878}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -8341,7 +8340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d171331d995c4144a96ddf3b4f12641c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinAxis: {x: 0, y: 0, z: 0}
+  spinAxis: {x: 0, y: 1, z: 0}
 --- !u!114 &1620803360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8362,11 +8361,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1620803358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2994, y: 388, z: 2475}
+  m_LocalPosition: {x: -984, y: 388, z: 295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1642043524
 GameObject:
@@ -8781,12 +8780,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1768034256}
-  m_LocalRotation: {x: -0.40821788, y: 0.23456968, z: -0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 233.78073, y: 141.18588, z: 125.64878}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 100000, y: -2.5, z: 100000}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
-  m_Father: {fileID: 1437702617}
-  m_RootOrder: 110
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1784607232
 GameObject:
@@ -9697,7 +9696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1a3e8de90def843807909c730b9e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectorSize: 400
   networkManager: {fileID: 1871160471}
   myShip: {fileID: 0}
   sectorNameDisplay: {fileID: 1500654364}
@@ -9710,7 +9708,10 @@ MonoBehaviour:
     z: 0
     sectorRadius: 0
     components: []
-  spaceshipPositionRelativeToCenterOfUniverse: {x: 0, y: 0, z: 0}
+  xPos: 0
+  yPos: 0
+  zPos: 0
+  servername: publicserver1
 --- !u!4 &1902250474
 Transform:
   m_ObjectHideFlags: 0
@@ -9718,7 +9719,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1902250472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.99999964, z: -10.000001}
+  m_LocalPosition: {x: 0, y: 100000, z: 100000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
