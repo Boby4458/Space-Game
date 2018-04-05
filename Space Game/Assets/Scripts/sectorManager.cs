@@ -52,7 +52,6 @@ public class Sector
 
     }
 
-    public buildingComponent[] components;
 
 }
 [System.Serializable]
