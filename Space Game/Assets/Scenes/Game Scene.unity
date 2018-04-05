@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: b51e5ca92763d484e928bae72c785ea7, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9fcb26b9fb8ffe34f9f834a1598bef22, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.030019643, g: 0.15004712, b: 0.41412577, a: 1}
+  m_IndirectSpecularColor: {r: 0.49780262, g: 0.49780262, b: 0.49780262, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -187,6 +187,54 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 6676966}
+--- !u!1001 &170543509
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4860351572756740, guid: 1b4a9199c7c2ee34484f31e68a969433, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 21.537148
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860351572756740, guid: 1b4a9199c7c2ee34484f31e68a969433, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 21.3425
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860351572756740, guid: 1b4a9199c7c2ee34484f31e68a969433, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 7.9012837
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860351572756740, guid: 1b4a9199c7c2ee34484f31e68a969433, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860351572756740, guid: 1b4a9199c7c2ee34484f31e68a969433, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860351572756740, guid: 1b4a9199c7c2ee34484f31e68a969433, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860351572756740, guid: 1b4a9199c7c2ee34484f31e68a969433, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860351572756740, guid: 1b4a9199c7c2ee34484f31e68a969433, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1b4a9199c7c2ee34484f31e68a969433, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &170543510 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114889608409897286, guid: 1b4a9199c7c2ee34484f31e68a969433,
+    type: 2}
+  m_PrefabInternal: {fileID: 170543509}
+  m_Script: {fileID: 11500000, guid: a421bb3ada64ac34c97a61239358e48e, type: 3}
 --- !u!1 &186318901
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +293,7 @@ MonoBehaviour:
   allSectorsOne: []
   allSectors: []
   dataServerManager: {fileID: 186318902}
+  skyboxGenerator: {fileID: 170543510}
 --- !u!1 &187031972
 GameObject:
   m_ObjectHideFlags: 0

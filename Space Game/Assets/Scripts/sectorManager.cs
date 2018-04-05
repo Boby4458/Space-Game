@@ -12,9 +12,29 @@ public class sectorManager : MonoBehaviour {
     bool alreadyEdited;
     Vector3 forwardTransform;
 
-    private void Start()
+    public SkyboxGenerator skyboxGenerator;
+
+    private void Awake()
     {
-        //If null then index does not exist.
+        GenerateSkybox(Vector3.zero);
+    }
+
+    public void GenerateSkybox(Vector3 curPos)
+    {
+        if (skyboxGenerator != null)
+        {
+
+            List<Vector3> positionsToAssign = new List<Vector3>();
+
+            foreach (Sector s in allSectors)
+            {
+                positionsToAssign.Add(new Vector3(s.x, s.y, s.z));
+            }
+
+            skyboxGenerator.skyObjects = positionsToAssign;
+            skyboxGenerator.currentPosition = curPos;
+
+        }
     }
     private void Update()
     {
