@@ -1618,7 +1618,8 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
             }
             else
             {
-                Debug.LogError("Operation failed: " + operationResponse.ToStringFull() + " Server: " + this.Server);
+                //Debug.LogError("Operation failed: " + operationResponse.ToStringFull() + " Server: " + this.Server);
+                Debug.Log("No existing room. Creating room.");
             }
         }
 
