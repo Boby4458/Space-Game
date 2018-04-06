@@ -15,17 +15,23 @@ public class serverScript : MonoBehaviour
     {
         
         InvokeRepeating("downloadSectors", 0, 5);
+        //createNewSector(new Sector("Williams Sector", new Vector3(0, 500, 500), 100));
     }
    
     private void Update()
     {
         
     }
-   
+    
     void createNewSector(Sector newSector)
     {
         string data = JsonConvert.SerializeObject(newSector);
+        registerSector(newSector);
         StartCoroutine(createNewSectorCoroutine(data + "+" ));
+    }
+    void registerSector(Sector s)
+    {
+        StartCoroutine(registerSectorCoroutine(s.name));
     }
     void downloadSectors()
     {
@@ -39,6 +45,29 @@ public class serverScript : MonoBehaviour
     {
         string replacement = JsonConvert.SerializeObject(replacementData);
         StartCoroutine(editSectorCoroutine(sectorName, replacement));
+    }
+    
+    void editBuildingComponents(string sectorName, buildingComponent[] bComponents)
+    {
+        StartCoroutine(editBuildingComponentsCoroutine(sectorName, bComponents));
+    }
+    IEnumerator editBuildingComponentsCoroutine(string sectorName, buildingComponent [] bComponents)
+    {
+        IEnumerator edit = DCF.SetUserData (sectorName, sectorName, JsonConvert.SerializeObject (bComponents));
+        while (edit.MoveNext())
+        {
+            yield return edit.Current;
+        }
+        
+    }
+    IEnumerator registerSectorCoroutine (string sectorName)
+    {
+        IEnumerator register = DCF.RegisterUser(sectorName, sectorName, string.Empty);
+        while (register.MoveNext())
+        {
+            yield return register.Current;
+        }
+        
     }
     IEnumerator editSectorCoroutine (string sectorName, string replacementData)
     {
